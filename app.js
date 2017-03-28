@@ -3,8 +3,12 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const animalRoutes = require('./routes/animals')
-const gameRoutes = require('./routes/games');
+
+//no need for explicit index.js
+const routes = require('./routes/');
+//above line executes what the 2 lines below this do
+// const animalRoutes = require('./routes/animals')
+// const gameRoutes = require('./routes/games');
 
 //middleware
 const requestTime = (request, response, next) => {
@@ -13,8 +17,10 @@ const requestTime = (request, response, next) => {
 }
 
 app.use(express.static(__dirname + '/public'))
-app.use(gameRoutes);
-app.use(animalRoutes);
+app.use(routes);
+//above line executes what the 2 lines below this do
+// app.use(gameRoutes);
+// app.use(animalRoutes);
 app.use(requestTime);
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

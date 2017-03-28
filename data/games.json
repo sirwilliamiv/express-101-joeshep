@@ -1,0 +1,12 @@
+{ "cardGames" :
+  [
+    {
+      "name": "Poker",
+      "type": "betting"
+    },
+    {
+      "name": "BlackJack",
+      "type": "odds"
+    }
+  ]
+}
