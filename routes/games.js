@@ -1,9 +1,10 @@
 const { Router } = require('express');
 const path = require('path');
 const gameRouter = Router();
-const { displayNames } = require('../controllers/gameCtrl')
+const { cardPage, displayNames } = require('../controllers/gameCtrl')
 
-gameRouter.get('/cardGames', displayNames)
+gameRouter.get('/cardGames', cardPage);
+gameRouter.post('/cardGames', displayNames)
 
 module.exports = gameRouter;
 
